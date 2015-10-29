@@ -18,7 +18,7 @@
 			$size = $this->addText( 10, 14, "Event : " . GetEventName($_POST['eventid']), 10, 4, 'B') + 5;
 			$size = $this->addText( 10, 19, "Between : " . date("d-M-Y", strtotime($this->fromdate)) . " and " . date ("d-M-Y", strtotime($this->todate)), 10, 4, 'B') + 5;
 			
-			$this->SetFont('Arial','', 6);
+			$this->SetFont('Arial','', 9);
 			
 			$this->dates = array();
 			$date = $this->fromdate;
@@ -30,14 +30,14 @@
 			}
 			
 			$cols = array(
-					GetEventName($_POST['eventid']) => 36,
-					$this->dates[0] => 22,
-					$this->dates[1] => 22,
-					$this->dates[2] => 22,
-					$this->dates[3] => 22,
-					$this->dates[4] => 22,
-					$this->dates[5] => 22,
-					$this->dates[6] => 22
+					GetEventName($_POST['eventid']) => 43,
+					$this->dates[0] => 21,
+					$this->dates[1] => 21,
+					$this->dates[2] => 21,
+					$this->dates[3] => 21,
+					$this->dates[4] => 21,
+					$this->dates[5] => 21,
+					$this->dates[6] => 21
 				);
 				
 			$this->addCols($size, $cols);
@@ -142,7 +142,7 @@
 								$this->dates[6] => number_format($amounts[6], 2)
 							);
 							
-						$this->addLine( $this->GetY(), $line );
+						$this->addLine( $this->GetY(), $line, 5);
 					}
 					
 				} else {
@@ -160,7 +160,7 @@
 						$this->dates[6] => " " . number_format($total[6], 2)
 					);
 					
-				$this->addLine( $this->GetY() + 2, $line );
+				$this->addLine( $this->GetY() + 2, $line, 5 );
 					
 			} catch (Exception $e) {
 				logError($e->getMessage());

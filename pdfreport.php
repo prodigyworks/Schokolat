@@ -460,7 +460,7 @@ function RoundedRect($x, $y, $w, $h, $r, $corners = '1234', $style = '')
 				$format [$lib] = $tab ["$lib"];
 		}
 	}
-	function addLine($ligne, $tab) {
+	function addLine($ligne, $tab, $lineHeight = 4) {
 		global $format;
 
 		$ordonnee = 10;
@@ -479,7 +479,7 @@ function RoundedRect($x, $y, $w, $h, $r, $corners = '1234', $style = '')
 			$tailleTexte = $this->sizeOfText ( $texte, $length );
 			$formText = $format [$lib];
 			$this->SetXY ( $ordonnee, $ligne - 1 );
-			$this->MultiCell ( $longCell, 4, $texte, 0, $formText );
+			$this->MultiCell ( $longCell, $lineHeight, $texte, 0, $formText );
 			if ($maxSize < ($this->GetY ()))
 				$maxSize = $this->GetY ();
 			$ordonnee += $pos;

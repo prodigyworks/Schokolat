@@ -17,7 +17,7 @@
 			$size = $this->addText( 10, 14, "Event : " . GetEventName($_POST['eventid']), 10, 4, 'B') + 5;
 			$size = $this->addText( 10, 19, "Between : " . date("d-M-Y", strtotime($this->fromdate)) . " and " . date ("d-M-Y", strtotime($this->todate)), 10, 4, 'B') + 5;
 			
-			$this->SetFont('Arial','', 6);
+			$this->SetFont('Arial','', 9);
 			
 			$cols = array(
 					GetEventName($_POST['eventid']) => 40,
@@ -193,7 +193,7 @@
 								"SALES" => number_format($sold * $retailprice, 2)
 							);
 							
-						$this->addLine( $this->GetY(), $line );
+						$this->addLine( $this->GetY(), $line, 5 );
 					}
 					
 				} else {
@@ -209,7 +209,7 @@
 						"SALES" => " " . number_format($total[4], 2)
 					);
 					
-				$this->addLine( $this->GetY() + 2, $line );
+				$this->addLine( $this->GetY() + 2, $line, 5 );
 					
 			} catch (Exception $e) {
 				logError($e->getMessage());

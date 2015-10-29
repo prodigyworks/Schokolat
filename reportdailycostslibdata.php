@@ -30,7 +30,7 @@
 			$size = $this->addText( 10, 5, "Report Daily Takings", 12, 4, 'B');
 			$size = $this->addText( 10, 14, "Date : " . $this->dateFrom, 10, 4, 'B') + 5;
 			
-			$this->SetFont('Arial','', 6);
+			$this->SetFont('Arial','', 12);
 				
 			$cols = array( 
 					"Event"  => 106,
@@ -38,7 +38,7 @@
 					"Expected"  => 42
 			);
 			
-			$this->addCols($size, $cols);
+			$this->addCols($size + 2, $cols);
 
 			$cols = array(
 					"Event"  => "L",
@@ -46,7 +46,7 @@
 					"Expected" => "R"
 				);
 			$this->addLineFormat( $cols);
-			$this->SetY(31);
+			$this->SetY(32);
 		}
 		
 		function __construct($orientation, $metric, $size, $datefrom) {
@@ -91,7 +91,7 @@
 								"Expected" => "£ " . number_format($member['amount'], 2)
 							);
 							
-						$this->addLine( $this->GetY(), $line );
+						$this->addLine( $this->GetY(), $line, 6.2);
 					}
 					
 				} else {
